@@ -1,6 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
+const dotenv = require('dotenv');
+const result = dotenv.config();
+if (result.error) {
+  throw result.error;
+}
+const { parsed: envs } = result;
+//use envs. to access environment variables
+
+
 /* GET home page. */
 router.get('/student/query', function(req, res, next) {
   //handle student query request
